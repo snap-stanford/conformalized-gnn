@@ -45,18 +45,18 @@ If you wish to re-train GNN base model, simply remove the base model folder in t
 
 ### Key Arguments
 
--`--model`: base GNN model, select from 'GAT', 'GCN', 'GraphSAGE', 'SGC'
--`--dataset`: dataset name, select from 'Cora_ML_CF', 'CiteSeer_CF', 'DBLP_CF', 'PubMed_CF', 'Amazon-Computers', 'Amazon-Photo', 'Coauthor-CS', 'Coauthor-Physics', 'Anaheim', 'ChicagoSketch', 'county_education_2012', 'county_election_2016', 'county_income_2012', 'county_unemployment_2012', 'twitch_PTBR'
--`--device`: cuda device
--`--alpha`: pre-specified miscoverage rate, default is 0.1
--`--optimal`: use optimal hyperparameter set
--`--hyperopt`: conduct a sweep of hyperparameter optimization
--`--num_runs`: number of runs, default is 10
--`--wandb`: turn on weight and bias tracking
--`--verbose`: verbose mode, print out log (incl. training loss)
--`--optimize_conformal_score`: for classification only, options: aps and raps
--`--not_save_res`: default is saving the result to the pred folder, by adding this flag, you choose to NOT save the result
--`--epochs`: number of epochs for conformal correction
+- `--model`: base GNN model, select from 'GAT', 'GCN', 'GraphSAGE', 'SGC'
+- `--dataset`: dataset name, select from 'Cora_ML_CF', 'CiteSeer_CF', 'DBLP_CF', 'PubMed_CF', 'Amazon-Computers', 'Amazon-Photo', 'Coauthor-CS', 'Coauthor-Physics', 'Anaheim', 'ChicagoSketch', 'county_education_2012', 'county_election_2016', 'county_income_2012', 'county_unemployment_2012', 'twitch_PTBR'
+- `--device`: cuda device
+- `--alpha`: pre-specified miscoverage rate, default is 0.1
+- `--optimal`: use optimal hyperparameter set
+- `--hyperopt`: conduct a sweep of hyperparameter optimization
+- `--num_runs`: number of runs, default is 10
+- `--wandb`: turn on weight and bias tracking
+- `--verbose`: verbose mode, print out log (incl. training loss)
+- `--optimize_conformal_score`: for classification only, options: aps and raps
+- `--not_save_res`: default is saving the result to the pred folder, by adding this flag, you choose to NOT save the result
+- `--epochs`: number of epochs for conformal correction
 
 
 ### Training CF-GNN
