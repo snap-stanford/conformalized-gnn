@@ -2,18 +2,19 @@
 
 This repository hosts the code base for
 
-```
-Uncertainty Quantification over Graph with Conformalized Graph Neural Networks
+
+**Uncertainty Quantification over Graph with Conformalized Graph Neural Networks**
 Kexin Huang, Ying Jin, Emmanuel Candès, Jure Leskovec
 NeurIPS 2023, Spotlight
-```
+
+[Paper](https://arxiv.org/abs/2305.14535)
 
 ### Abstract
 
 Graph Neural Networks (GNNs) are powerful machine learning prediction models on graph-structured data. However, GNNs lack rigorous uncertainty estimates, limiting their reliable deployment in settings where the cost of errors is significant. We propose conformalized GNN (CF-GNN), extending conformal prediction (CP) to graph-based models for guaranteed uncertainty estimates. Given an entity in the graph, CF-GNN produces a prediction set/interval that provably contains the true label with pre-defined coverage probability (e.g.~90%). We establish a permutation invariance condition that enables the validity of CP on graph data and provide an exact characterization of the test-time coverage. Besides valid coverage, it is crucial to reduce the prediction set size/interval length for practical use. We observe a key connection between non-conformity scores and network structures, which motivates us to develop a topology-aware output correction model that learns to update the prediction and produces more efficient prediction sets/intervals. Extensive experiments show that CF-GNN achieves any pre-defined target marginal coverage while significantly reducing the prediction set/interval size by up to 74% over the baselines. It also empirically achieves satisfactory conditional coverage over various raw and network features. 
 
 
-<p align="center"><img src="./fig/logo.png" alt="logo" width="800px" /></p>
+<p align="center"><img src="./fig/graph_conformal.png" alt="logo" width="800px" /></p>
 
 
 ## Installation
@@ -44,18 +45,18 @@ If you wish to re-train GNN base model, simply remove the base model folder in t
 
 ### Key Arguments
 
-`--model`: base GNN model, select from 'GAT', 'GCN', 'GraphSAGE', 'SGC'
-`--dataset`: dataset name, select from 'Cora_ML_CF', 'CiteSeer_CF', 'DBLP_CF', 'PubMed_CF', 'Amazon-Computers', 'Amazon-Photo', 'Coauthor-CS', 'Coauthor-Physics', 'Anaheim', 'ChicagoSketch', 'county_education_2012', 'county_election_2016', 'county_income_2012', 'county_unemployment_2012', 'twitch_PTBR'
-`--device`: cuda device
-`--alpha`: pre-specified miscoverage rate, default is 0.1
-`--optimal`: use optimal hyperparameter set
-`--hyperopt`: conduct a sweep of hyperparameter optimization
-`--num_runs`: number of runs, default is 10
-`--wandb`: turn on weight and bias tracking
-`--verbose`: verbose mode, print out log (incl. training loss)
-`--optimize_conformal_score`: for classification only, options: aps and raps
-`--not_save_res`: default is saving the result to the pred folder, by adding this flag, you choose to NOT save the result
-`--epochs`: number of epochs for conformal correction
+-`--model`: base GNN model, select from 'GAT', 'GCN', 'GraphSAGE', 'SGC'
+-`--dataset`: dataset name, select from 'Cora_ML_CF', 'CiteSeer_CF', 'DBLP_CF', 'PubMed_CF', 'Amazon-Computers', 'Amazon-Photo', 'Coauthor-CS', 'Coauthor-Physics', 'Anaheim', 'ChicagoSketch', 'county_education_2012', 'county_election_2016', 'county_income_2012', 'county_unemployment_2012', 'twitch_PTBR'
+-`--device`: cuda device
+-`--alpha`: pre-specified miscoverage rate, default is 0.1
+-`--optimal`: use optimal hyperparameter set
+-`--hyperopt`: conduct a sweep of hyperparameter optimization
+-`--num_runs`: number of runs, default is 10
+-`--wandb`: turn on weight and bias tracking
+-`--verbose`: verbose mode, print out log (incl. training loss)
+-`--optimize_conformal_score`: for classification only, options: aps and raps
+-`--not_save_res`: default is saving the result to the pred folder, by adding this flag, you choose to NOT save the result
+-`--epochs`: number of epochs for conformal correction
 
 
 ### Training CF-GNN
