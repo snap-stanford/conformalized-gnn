@@ -4,9 +4,8 @@ This repository hosts the code base for the paper
 
 **Uncertainty Quantification over Graph with Conformalized Graph Neural Networks**\
 Kexin Huang, Ying Jin, Emmanuel Candès, Jure Leskovec\
-NeurIPS 2023, Spotlight
-
-[Paper](https://arxiv.org/abs/2305.14535)
+NeurIPS 2023, Spotlight \
+[Link to Paper](https://arxiv.org/abs/2305.14535)
 
 
 If you find this work useful, please consider cite:
