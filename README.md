@@ -1,17 +1,27 @@
 # Conformalized Graph Neural Networks
 
-This repository hosts the code base for
+This repository hosts the code base for the paper
 
-
-**Uncertainty Quantification over Graph with Conformalized Graph Neural Networks**
-
-Kexin Huang, Ying Jin, Emmanuel Candès, Jure Leskovec
-
+**Uncertainty Quantification over Graph with Conformalized Graph Neural Networks**\
+Kexin Huang, Ying Jin, Emmanuel Candès, Jure Leskovec\
 NeurIPS 2023, Spotlight
 
 [Paper](https://arxiv.org/abs/2305.14535)
 
-### Abstract
+
+If you find this work useful, please consider cite:
+
+```
+@article{huang2023conformalized_gnn,
+  title={Uncertainty quantification over graph with conformalized graph neural networks},
+  author={Huang, Kexin and Jin, Ying and Candes, Emmanuel and Leskovec, Jure},
+  journal={NeurIPS},
+  year={2023}
+}
+```
+
+
+### Overview
 
 Graph Neural Networks (GNNs) are powerful machine learning prediction models on graph-structured data. However, GNNs lack rigorous uncertainty estimates, limiting their reliable deployment in settings where the cost of errors is significant. We propose conformalized GNN (CF-GNN), extending conformal prediction (CP) to graph-based models for guaranteed uncertainty estimates. Given an entity in the graph, CF-GNN produces a prediction set/interval that provably contains the true label with pre-defined coverage probability (e.g.~90%). We establish a permutation invariance condition that enables the validity of CP on graph data and provide an exact characterization of the test-time coverage. Besides valid coverage, it is crucial to reduce the prediction set size/interval length for practical use. We observe a key connection between non-conformity scores and network structures, which motivates us to develop a topology-aware output correction model that learns to update the prediction and produces more efficient prediction sets/intervals. Extensive experiments show that CF-GNN achieves any pre-defined target marginal coverage while significantly reducing the prediction set/interval size by up to 74% over the baselines. It also empirically achieves satisfactory conditional coverage over various raw and network features. 
 
@@ -155,16 +165,4 @@ do
 python train.py --model GCN --dataset $data --device cuda --optimal --calib_fraction $calib_frac
 done
 done
-```
-
-
-## Citation
-
-```
-@article{huang2023conformalized_gnn,
-  title={Uncertainty quantification over graph with conformalized graph neural networks},
-  author={Huang, Kexin and Jin, Ying and Candes, Emmanuel and Leskovec, Jure},
-  journal={NeurIPS},
-  year={2023}
-}
 ```
