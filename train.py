@@ -781,6 +781,9 @@ def main(args):
             return optimal_examine_res
         tau2res[run] = result_this_run
         print('Finished training this run!')
+      
+    if not os.path.exists('./pred'):
+        os.mkdir('./pred')
     if not args.not_save_res:
         print('Saving results to', './pred/' + name +'.pkl')
         with open('./pred/' + name +'.pkl', 'wb') as f:
